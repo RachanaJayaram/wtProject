@@ -1,0 +1,9 @@
+Dijkstra(G, w, s)
+INITIALIZE-SINGLE-SOURCE(G, s)
+S = &#x0278;
+Q = G.V
+while Q &#8800; &#x0278;
+    u = EXTRACT-MIN(Q)
+    S = S &#8746 {u}
+    for each vertex v &#8712; G.Adj[u]
+        RELAX(u, v, w)

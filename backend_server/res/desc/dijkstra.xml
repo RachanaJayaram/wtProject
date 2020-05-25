@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article>
+    <title> Dijkstra's Algorithm </title>
+    <description> 
+        Dijkstra's algorithm solves the single-source shortest paths-problem on weighted, directed graph G = (V, E) 
+        for the case in which all edge weights are non negative. With good implementation, the running time of of 
+        Dijkstra's algorithm is lower than that of the Bellman-Ford algorithm.
+    </description>
+    <algo-description-pre>
+        Dijkstra's algorithm maintains a set S of vertices whose final shortest-path weights from the source s have 
+        already been determined. The algorithm repeatedly selects the vertex u &#8712;  V - S with the minimum shortest 
+        path estimate adds u to S, and relaxes all edges leaving u. In the following implementation we use a 
+        min-priority queue Q of vertices, keyed by their d values.
+    </algo-description-pre>
+    <algorithm-description-post>
+        <para>
+        </para>
+
+        <para>
+        </para>
+    </algorithm-description-post>
+    <application>
+        <app>Used widely as a IP routing algorithm.</app>
+        <app>Finding shortest route between two points on a map.</app>
+    </application>
+    <author>   
+        Rachana Jayaram
+    </author>
+    <author-link>
+        http://rachanajayaram.github.io/projects
+    </author-link>
+    <input>available</input>
+</article>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <title>Dijkstra's Algorithm</title>
+
+</head>
+
+<body
+    style="font-family: 'Nunito Sans', sans-serif !important; font-size: small;">
+
+    <!-- START SIGMA IMPORTS -->
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/sigma.core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/conrad.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/utils/sigma.utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/utils/sigma.polyfills.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/sigma.settings.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/classes/sigma.classes.dispatcher.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/classes/sigma.classes.configurable.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/classes/sigma.classes.graph.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/classes/sigma.classes.camera.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/classes/sigma.classes.quad.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/classes/sigma.classes.edgequad.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/captors/sigma.captors.mouse.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/captors/sigma.captors.touch.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/sigma.renderers.canvas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/sigma.renderers.webgl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/sigma.renderers.svg.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/sigma.renderers.def.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/webgl/sigma.webgl.nodes.def.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/webgl/sigma.webgl.nodes.fast.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/webgl/sigma.webgl.edges.def.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/webgl/sigma.webgl.edges.fast.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/webgl/sigma.webgl.edges.arrow.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/canvas/sigma.canvas.labels.def.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/canvas/sigma.canvas.hovers.def.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/canvas/sigma.canvas.nodes.def.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/canvas/sigma.canvas.edges.def.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/canvas/sigma.canvas.edges.curve.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/canvas/sigma.canvas.edges.arrow.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/canvas/sigma.canvas.edges.curvedArrow.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/canvas/sigma.canvas.edgehovers.def.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/canvas/sigma.canvas.edgehovers.curve.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/canvas/sigma.canvas.extremities.def.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/svg/sigma.svg.utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/svg/sigma.svg.nodes.def.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/svg/sigma.svg.edges.def.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/svg/sigma.svg.edges.curve.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/svg/sigma.svg.labels.def.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/renderers/svg/sigma.svg.hovers.def.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/middlewares/sigma.middlewares.rescale.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/middlewares/sigma.middlewares.copy.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/misc/sigma.misc.animation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/misc/sigma.misc.bindEvents.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/misc/sigma.misc.bindDOMEvents.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/src/misc/sigma.misc.drawHovers.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/plugins/sigma.renderers.edgeLabels/settings.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.def.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curve.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curvedArrow.js"></script>
+    <!-- END SIGMA IMPORTS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/plugins/sigma.plugins.dragNodes/sigma.plugins.dragNodes.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.dashed.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.dotted.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.parallel.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edges.tapered.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.dashed.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.dotted.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.parallel.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/plugins/sigma.renderers.customEdgeShapes/sigma.canvas.edgehovers.tapered.js"></script>
+    </div>
+    <h1>Dijkstra's Algorithm</h1>
+    <div id="container">
+        <style>
+            #graph-container {
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                position: absolute;
+            }
+
+            #sidebar {
+
+                background-color: rgb(255, 255, 255);
+                width: 250px;
+                top: 0px;
+                margin: 0px !important;
+                padding: 10px;
+            }
+
+            div {
+                margin: 4px;
+
+            }
+
+            #next {
+                position: fixed;
+                bottom: 4px;
+                padding: 15px;
+                margin: 5px;
+                background-color:  rgb(7, 62, 114);
+                border: 0px;
+                border-radius: 3px;
+                color: white;
+                font-size: 15px;
+                box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.2);
+                transition-duration: 0.5s;
+
+
+
+            }
+
+            button {
+                background-color:  rgb(7, 62, 114) !important;
+                border: 0px;
+                margin: 1px;
+                border-radius: 3px;
+                padding: 5px;
+                padding-left: 8px;
+                padding-right: 8px;
+                font-size: 14px;
+                color: white;
+
+            }
+
+            #next.hover {
+                background-color: rgb(40, 40, 180);
+                width: fit-content !important;
+
+                box-shadow: 0px 0px 0px 0 rgba(252, 252, 252, 0.2);
+            }
+        </style>
+        <div id="sidebar">
+            <div id="queue">
+                <h4>Queue</h4>
+                <div id="draw_queue">
+                </div>
+            </div>
+
+            <div id="Distances">
+
+                <h4>Distances</h4>
+                <div id="draw_dist_0">
+
+                </div>
+                <div id="draw_dist_1">
+
+                </div>
+            </div>
+            <div id="settled">
+                <h4>Settled</h4>
+                <div id="draw_settled">
+                </div>
+            </div>
+            <div id="Node">
+                <h4>Node Under Consideration </h4>
+                <div id="draw_node">
+                </div>
+            </div>
+            <div id="current_Node">
+
+                <div id="draw_current_node">
+                </div>
+            </div>
+
+
+            <div id="graph-container" style="left:250px;position: absolute;"></div>
+        </div>
+    </div>
+
+
+    <script>
+        result = {{ result | tojson | safe }};
+        input_graph = {{ input_graph | tojson | safe }};
+        step_no = 0;
+        old_adj_node = -1;
+    </script>
+
+    <script src="{{url_for('static', filename='js/dijkstra.js')}}"></script>
+    <div>
+        <button id="next" onclick="func()" style="bottom:20px;right:20px;position: absolute;">Next</button>
+    </div>
+</body>
+
+</html>

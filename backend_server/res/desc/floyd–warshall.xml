@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<article> 
+	<title>Floyd-Warshall</title>
+	<description>In computer science, the Floyd-Warshall algorithm (also known as Floyd's algorithm, the Roy-Warshall algorithm, the Roy-Floyd algorithm, or the WFI algorithm) is an algorithm for finding shortest paths in a weighted graph with positive or negative edge weights (but with no negative cycles). A single execution of the algorithm will find the lengths (summed weights) of shortest paths between all pairs of vertices. Although it does not return details of the paths themselves, it is possible to reconstruct the paths with simple modifications to the algorithm. </description>
+	<algo-description-pre>The Floyd-Warshall algorithm is an example of dynamic programming. The Floyd-Warshall algorithm compares all possible paths through the graph between each pair of vertices.It does so by incrementally improving an estimate on the shortest path between two vertices, until the estimate is optimal.</algo-description-pre>
+	<application>			<app>Versions of the algorithm can also be used for finding the transitive closure of a relation R
+</app>			<app>For finding widest paths between all pairs of vertices in a weighted graph.</app></application>
+	<author>Hemanth C</author>
+	<author-link>http://rachanajayaram.github.io/projects</author-link>
+	
+</article>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0">
+
+
+
+    <channel>
+
+        <ttl>2000</ttl>
+
+        <title>Graphing Algorithms</title>
+
+        <language>en</language>
+
+
+
+        <item>
+
+            <title>Dijkstra's Algorithm</title>
+
+            <link>http://127.0.0.1:4200/algorithm-description/dijkstra</link>
+
+            <description>Dijkstra's algorithm solves the single-source shortest paths-problem on weighted, directed graphs for the case in which all edge weights are non negative. </description>
+
+      		<creator>Rachana Jayaram</creator>
+
+        </item>
+
+
+
+		<item>
+			<title>Bellman Ford</title>
+			<link>http://127.0.0.1:4200/algorithm-description/bellman-ford</link>
+			<description>The Bellman-Ford algorithm is an algorithm that computes shortest paths from a single source vertex to all of the other vertices in a weighted digraph.It is slower than Dijkstra's algorithm for the same problem, but more versatile, as it is capable of handling graphs in which some of the edge weights are negative numbers.</description>
+			<creator>Rachana Jayaram</creator>
+		</item>	
+		<item>
+			<title>Floyd-Warshall</title>
+			<link>http://127.0.0.1:4200/algorithm-description/floyd-warshall</link>
+			<description>In computer science, the Floyd-Warshall algorithm (also known as Floyd's algorithm, the Roy-Warshall algorithm, the Roy-Floyd algorithm, or the WFI algorithm) is an algorithm for finding shortest paths in a weighted graph with positive or negative edge weights (but with no negative cycles). A single execution of the algorithm will find the lengths (summed weights) of shortest paths between all pairs of vertices. Although it does not return details of the paths themselves, it is possible to reconstruct the paths with simple modifications to the algorithm. </description>
+			<creator>Hemanth C</creator>
+		</item>	
+</channel>
+</rss>

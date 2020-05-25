@@ -1,0 +1,134 @@
+ textarea {
+    width: 100%;
+    height: 150px;
+    resize: none;
+    font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco, Consolas, monospace !important;
+    background-color: #a5d2f73b;
+    border: white;
+  }
+
+  input[type=text] {
+    width: 100% !important;
+    resize: none;
+    box-shadow: transparent;
+    font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco, Consolas, monospace !important;
+    background-color: #a5d2f73b;
+    border: white;
+
+  }
+
+  .btn {
+    color: white !important;
+    background-color: rgb(7, 62, 114) !important;
+    width: 33%;
+    margin-left: 33%;
+
+  }
+
+  .btn:hover {
+    color: black !important;
+    background-color: white !important;
+  }
+
+  body {
+    font-family: 'Nunito Sans', sans-serif !important;
+    font-size: medium !important;
+  }
+
+  .prettyprint {
+    background: #2d2d2d;
+    font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco, Consolas, monospace;
+    border: 0 !important
+  }
+
+  .pln {
+    color: #ccc !important
+  }
+
+  ol.linenums {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #999 !important
+  }
+
+  li.L0,
+  li.L1,
+  li.L2,
+  li.L3,
+  li.L4,
+  li.L5,
+  li.L6,
+  li.L7,
+  li.L8,
+  li.L9 {
+    padding-left: 1em;
+    background-color: #2d2d2d !important;
+    list-style-type: decimal
+  }
+
+  @media screen {
+    .str {
+      color: #9c9 !important
+    }
+
+    .kwd {
+      color: #c9c !important
+    }
+
+    .com {
+      color: #999 !important
+    }
+
+    .typ {
+      color: #69c !important
+    }
+
+    .lit {
+      color: #f99157 !important
+    }
+
+    .pun {
+      color: #ccc !important
+    }
+
+    .opn {
+      color: #ccc !important
+    }
+
+    .clo {
+      color: #ccc !important
+    }
+
+    .tag {
+      color: #f2777a !important
+    }
+
+    .atn {
+      color: #f99157 !important
+    }
+
+    .atv {
+      color: #6cc !important
+    }
+
+    .dec {
+      color: #f99157 !important
+    }
+
+    .var {
+      color: #f2777a !important
+    }
+
+    .fun {
+      color: #69c !important
+    }
+  }
+
+  .prettyprint ol.linenums>li {
+    list-style-type: decimal;
+  }
+
+  a {
+    color: rgb(7, 91, 226);
+    font-size: x-large !important;
+  }

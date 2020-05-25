@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title> Algorithm</title>
+
+  <link href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+  <link href="{{url_for('static', filename='vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet"
+    type="text/css">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+
+  <link
+    href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+    rel='stylesheet' type='text/css'>
+
+  <link href="{{url_for('static', filename='css/clean-blog.min.css')}}" rel="stylesheet" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+  <script src="{{url_for('static', filename='js/intro.js')}}"></script>
+
+  <link href="{{url_for('static', filename='css/algorithm-decription.css')}}" rel="stylesheet" type="text/css">
+
+</head>
+
+<body onload="getRSS()">
+
+
+  <div ng-app="myApp" ng-controller="customersCtrl">
+
+    <header class="masthead"
+      style="background-image: url({{url_for('static', filename='img/header-background.jpeg')}})">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>{{' {{title}} '}} </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <article>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <p>{{' {{intro}} '}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <h1>List of algorithms</h1>
+            <div id = "algo-lists">
+
+            </div>
+          </div>
+        </div>
+
+        <hr>
+        Publish your own articles <a style = "font-size: small !important" href="http://127.0.0.1:4200/publish">here</a>.
+        
+      </div>
+
+    </article>
+
+
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+ 
+  </div>
+  
+</body>
+
+</html>

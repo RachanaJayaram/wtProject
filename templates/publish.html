@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title> Publish your algorithm</title>
+
+  <link href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+  <link href="{{url_for('static', filename='vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet"
+    type="text/css">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+
+  <link
+    href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+    rel='stylesheet' type='text/css'>
+
+  <link href="{{url_for('static', filename='css/clean-blog.min.css')}}" rel="stylesheet" type="text/css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+  <link href="{{url_for('static', filename='css/algorithm-decription.css')}}" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+
+  <div ng-app="myApp" ng-controller="customersCtrl">
+
+    <header class="masthead"
+      style="background-image: url({{url_for('static', filename='img/header-background.jpeg')}})">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1> Publish Your Algorithm</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <article>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div id="algo-lists">
+              <form action="http://127.0.0.1:5000/publish" method="POST" enctype="multipart/form-data">
+                <h5>Enter Algorithm Title</h5>
+                <br>
+                <input type="text" id="title" name="title" placeholder="Enter input here.">
+                <br><br><br>
+
+                <h5>Enter Description</h5>
+                <br>
+                <textarea type='text' name='description'>Enter input here.</textarea>
+                <br><br><br>
+
+                <h5>Enter Brief Explanation of Algorithm</h5>
+                <br>
+                <textarea type='text' name='algo-description-pre'>Enter input here.</textarea>
+                <br><br><br>
+
+                <h5>Enter Algorithm</h5>
+                <br>
+                <textarea type='text' name='algo'>Enter input here.</textarea>
+                <br><br><br>
+
+                <h5>Enter applications (each point on new line)</h5>
+                <br>
+                <textarea type='text' name='applications'>Enter input here.</textarea>
+                <br><br><br>
+
+                <h5>Enter Author Name</h5>
+                <br>
+                <input type="text" id="author-name" name="author-name" placeholder="Enter input here.">
+                <br><br><br>
+
+                <h5>Enter Author Link</h5>
+                <br>
+                <input type="text" id="author-link" name="author-link" placeholder="Enter input here.">
+                <br><br><br>
+                <input class='btn' type='submit'>
+                <br><br><br>
+
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </div>
+</body>
+
+</html>
