@@ -16,7 +16,7 @@ def get_recommendations(query):
     'part':'snippet',
     'maxResults' : 3,
     'q' : query,
-    'key' : ""
+    'key' : ""  # Enter YOUR key.
     } 
     
     req = requests.get(url = "https://www.googleapis.com/youtube/v3/search", params = PARAMS) 

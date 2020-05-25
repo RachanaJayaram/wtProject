@@ -6,7 +6,7 @@
 
     <channel>
 
-        <ttl>2000</ttl>
+        <ttl>20000</ttl>
 
         <title>Graphing Algorithms</title>
 

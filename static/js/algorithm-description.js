@@ -117,7 +117,7 @@ function addFormat() {
         inputCode.innerHTML = this.responseText;
 
         var form = document.createElement("div");
-        form.innerHTML = "<form action= 'http://127.0.0.1:4200/" + algorithm +  "' target = '_blank' method = 'POST'><textarea type = 'text' name='input'>Enter input here.</textarea><br><br><input class='btn' type='submit'></form>";
+        form.innerHTML = "<form action= 'http://127.0.0.1:4200/" + algorithm +  "' method = 'POST'><textarea type = 'text' name='input'>Enter input here.</textarea><br><br><input class='btn' type='submit'></form>";
         example.appendChild(form);
 
         PR.prettyPrint()

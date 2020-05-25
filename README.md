@@ -8,7 +8,6 @@ In this project we present a teaching tool that is used for easy visualization o
 * The short blog associated with each algorithm helps with understanding the theory side of things. 
 * Youtube tutorials for each algorithm are linked at the end of each blog to provide more clarity.
 * Functionality to publish your own articles are provided.
-* Visualization of Dijkstra's Algorithm.
 
 ## Frontend Frameworks
 * Sigma JS
@@ -25,33 +24,6 @@ In this project we present a teaching tool that is used for easy visualization o
 ## Intelligent Functionality
 * Dynamic graph rendering algorithms
 * Recommendation for youtube tutorials based on current article 
-
-## Steps to run
-
-Running Frontend Server
-```
-python rendering_server.py 
-```
-
-Running Backend Server
-```
-cd backend_server
-python main_server.py
-```
-
-Running Unit Tests
-```
-pip install unittest
-cd backend_server
-python unit_test.py
-```
-
-Running System Tests
-```
-pip install selenium
-cd backend_server
-python system_test.py
-```
 
 ## Screenshots
 ### Algorithm Steps 
